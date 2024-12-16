@@ -1,0 +1,17 @@
+### Pourquoi utiliser une HashMap pour stocker les informations produit ?  
+Une HashMap offre un accès rapide aux produits via leur ID, permettant une recherche en temps constant O(1), ce qui est particulièrement efficace pour des recherches par clé.
+Contrairement à une ArrayList ou un tableau, elle est mieux adaptée pour gérer des données où l'accès direct par ID est prioritaire. Dans notre application, 
+où chaque produit possède un ID unique, la HashMap est idéale pour gérer efficacement l'inventaire.
+
+### Pourquoi utiliser une ArrayList pour les expéditions quotidiennes ?  
+Une ArrayList conserve l'ordre d'insertion, ce qui permet de stocker les IDs des produits reçus dans leur ordre d'arrivée. 
+Cela répond parfaitement au besoin du responsable, qui souhaite consulter les expéditions dans l'ordre chronologique.
+
+
+### Que faire si les produits doivent être triés par nom et ID ?  
+Pour trier les produits par nom et ID, nous pourrions créer une liste triée en utilisant un Comparator combinant les deux critères.
+
+
+### Que faire si les IDs ne sont pas uniques ou si les expéditions nécessitent des horodatages ?  
+- Si les IDs ne sont pas uniques, une List<Product> permettrait de gérer les doublons.  
+- Pour inclure des horodatages dans les expéditions, nous pourrions utiliser une Map<LocalDateTime, Integer>, associant un horodatage (LocalDateTime) à l'ID du produit.
